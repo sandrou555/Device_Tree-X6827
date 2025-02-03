@@ -45,7 +45,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_TARGET_VNDK_VERSION := 31
 
 # API
-PRODUCT_SHIPPING_API_LEVEL := 32
+PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Health HAL
 PRODUCT_PACKAGES += \
@@ -77,7 +77,8 @@ PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
     update_engine \
-    update_verifier  
+    update_verifier \
+    update_engine_sideload
 
 # HACK: Set vendor patch level
 PRODUCT_PRODUCT_PROPERTIES += \
