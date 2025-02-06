@@ -58,7 +58,6 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := Image
 
 # AVB
-# Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_VBMETA_SYSTEM := system system_ext product
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
@@ -137,7 +136,6 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 # MTK
 BOARD_HAS_MTK_HARDWARE := true
 BOARD_USES_MTK_HARDWARE := true
-#MTK_HARDWARE := true
 
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
@@ -146,10 +144,12 @@ TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
 TARGET_USES_MKE2FS := true
+
 # Brightness
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 1200
 TW_MAX_BRIGHTNESS := 2047
+
 # Excludes
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_APEX := true
@@ -157,11 +157,13 @@ TW_EXCLUDE_BASH := true
 TW_EXCLUDE_NANO := true
 TW_EXCLUDE_TWRPAPP := true
 TW_EXCLUDE_SUPERSU := true
+
 # Includes
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_NTFS_3G := true
-#Tweaks
+
+# Tweaks
 TW_NO_SCREEN_BLANK := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_FRAMERATE := 60
@@ -172,11 +174,14 @@ TW_NO_FLASH_CURRENT_TWRP := true
 TW_STATUS_ICONS_ALIGN := center
 TW_CUSTOM_CPU_POS := 580
 TW_CUSTOM_CLOCK_POS := 60
+
 # Version
 TW_DEVICE_VERSION := ${shell git -C $(DEVICE_PATH) rev-parse --short HEAD}-TegarXLu
+
 # Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
-#PBRP_FLAGS
+
+# PBRP Flags
 PB_TORCH_PATH := "/sys/devices/virtual/torch/torch/torch_level"
 PB_TORCH_MAX_BRIGHTNESS := 1

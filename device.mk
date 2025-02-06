@@ -50,8 +50,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Health HAL
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-service \
-    #libhealthd.$(PRODUCT_PLATFORM)
+    android.hardware.health@2.1-service
 
 # Boot Control HAL
 PRODUCT_PACKAGES += \
@@ -90,12 +89,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(LOCAL_PATH)/security/infinix
 
-
-# MTK plpath utils
-#PRODUCT_PACKAGES += \
-#    mtk_plpath_utils \
-#    mtk_plpath_utils.recovery
-
 # Recovery modules
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
@@ -104,4 +97,3 @@ TARGET_RECOVERY_DEVICE_MODULES += \
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
-
