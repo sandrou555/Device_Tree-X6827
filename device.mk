@@ -26,12 +26,13 @@ AB_OTA_PARTITIONS += \
     vbmeta \
     vbmeta_system \
     vbmeta_vendor \
-    vendor
+    vendor \
+    vendor_boot
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=erofs \
+    FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
 # Virtual A/B
@@ -42,15 +43,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # VNDK
-PRODUCT_TARGET_VNDK_VERSION := 30
+PRODUCT_TARGET_VNDK_VERSION := 31
 
 # API
-PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 # Health HAL
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-service
+    android.hardware.health@2.1-service \
+    #libhealthd.$(PRODUCT_PLATFORM)
 
 # Boot Control HAL
 PRODUCT_PACKAGES += \
@@ -89,6 +91,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(LOCAL_PATH)/security/infinix
 
+
+# MTK plpath utils
+#PRODUCT_PACKAGES += \
+#    mtk_plpath_utils \
+#    mtk_plpath_utils.recovery
+
 # Recovery modules
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
@@ -96,4 +104,5 @@ TARGET_RECOVERY_DEVICE_MODULES += \
 
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
+
