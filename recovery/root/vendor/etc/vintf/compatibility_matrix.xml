@@ -3,6 +3,7 @@
         compatibility_matrix.xml
 -->
 <compatibility-matrix version="2.0" type="device">
+    <!-- HAL yang sudah ada -->
     <hal format="hidl" optional="false">
         <name>android.frameworks.schedulerservice</name>
         <version>1.0</version>
@@ -11,26 +12,20 @@
         <name>android.frameworks.sensorservice</name>
         <version>1.0</version>
     </hal>
+    <!-- Tambahkan HAL yang diperlukan oleh PBRP -->
     <hal format="hidl" optional="false">
-        <name>android.hidl.allocator</name>
+        <name>android.hardware.boot</name>
         <version>1.0</version>
     </hal>
     <hal format="hidl" optional="false">
-        <name>android.hidl.manager</name>
+        <name>android.hardware.gatekeeper</name>
         <version>1.0</version>
     </hal>
     <hal format="hidl" optional="false">
-        <name>android.hidl.memory</name>
-        <version>1.0</version>
+        <name>android.hardware.keymaster</name>
+        <version>4.1</version>
     </hal>
-    <hal format="hidl" optional="false">
-        <name>android.hidl.token</name>
-        <version>1.0</version>
-    </hal>
-    <hal format="hidl" optional="false">
-        <name>android.system.wifi.keystore</name>
-        <version>1.0</version>
-    </hal>
+    <!-- Vendor NDK dan System SDK -->
     <vendor-ndk>
         <version>30</version>
     </vendor-ndk>
