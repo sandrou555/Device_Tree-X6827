@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-# Inherit from X6827 device
+# Inherit from X6812 device
 $(call inherit-product, device/infinix/X6827/device.mk)
 
 # Inherit some common TWRP stuff.
