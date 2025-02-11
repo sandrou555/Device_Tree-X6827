@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="github" fetch="https://github.com" />
+  <default revision="android-11.0" remote="github" sync-j="4" />
+
+  <!-- PBRP 11.0 Core -->
+  <project path="vendor/pb" name="PitchBlackRecoveryProject/vendor_pb" revision="android-11.0" />
+  <project path="bootable/recovery" name="PitchBlackRecoveryProject/pbrp_recovery" revision="android-11.0" />
+
+  <!-- Device Tree -->
+  <project path="device/infinix/X6827" name="sandrou555/Device_Tree-X6827" revision="pbrp-11.0" />
+</manifest>
