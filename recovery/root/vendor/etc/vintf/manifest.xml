@@ -34,7 +34,7 @@
         manifest_target_level_r.xml
         manifest.xml
 -->
-<manifest version="4.0" type="device" target-level="5">
+<manifest version="3.0" type="device" target-level="4"> 
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -68,7 +68,12 @@
     <hal format="hidl">
         <name>android.hardware.bluetooth.audio</name>
         <transport>hwbinder</transport>
-        <version>2.1</version>
+        <version>2.0</version>
+    <interface>
+        <name>IHealth</name>
+        <instance>default</instance>
+    </interface>
+</hal>
         <interface>
             <name>IBluetoothAudioProvidersFactory</name>
             <instance>default</instance>
