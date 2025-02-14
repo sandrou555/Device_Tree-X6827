@@ -5,24 +5,17 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/infinix/X6827
+LOCAL_PATH := device/infinix/X669C
 
 # A/B
 AB_OTA_PARTITIONS += \
     boot \
     dtbo \
-    gz \
     lk \
-    logo \
-    md1img \
     preloader \
     product \
-    scp \
-    spmfw \
-    sspm \
     system \
     system_ext \
-    tee \
     vbmeta \
     vbmeta_system \
     vbmeta_vendor \
@@ -33,7 +26,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
-    FILESYSTEM_TYPE_system=erofs \
     POSTINSTALL_OPTIONAL_system=true
 
 # Virtual A/B

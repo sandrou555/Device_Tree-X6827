@@ -1,5 +1,5 @@
-ro.mediatek.platform=MT6781
-ro.hardware=mt6781
+ro.mediatek.platform=MT6765
+ro.hardware=mt6765
 ro.hardware.gatekeeper=trustonic
 ro.hardware.kmsetkey=trustonic
 ro.mtk_trustonic_tee_support=1
