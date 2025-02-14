@@ -184,5 +184,6 @@ TARGET_USES_LOGD := true
 #PBRP_FLAGS
 TW_USE_TOOLBOX := true
 TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
+PN_VANILLA_BUILD=1
 PB_TORCH_PATH := "/sys/class/leds/lcd-backlight/brightness"
 PB_TORCH_MAX_BRIGHTNESS := 1
