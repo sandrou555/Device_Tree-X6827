@@ -187,13 +187,13 @@ TW_DEVICE_VERSION := ${shell git -C $(DEVICE_PATH) rev-parse --short HEAD}-Tegar
 
 # NOTE - Dont use '-' or blank spaces in flag values , otherwise it will create build errors or other bugs in recovery (Excluding SHRP_PATH,SHRP_REC). 
 # Path of your SHRP Tree
-SHRP_PATH := device/tecno/LH8n
+SHRP_PATH := device/infinix/X6827
 
 # Maintainer name *
-SHRP_MAINTAINER := naze
+SHRP_MAINTAINER := TegarXLu
 
 # Device codename *
-SHRP_DEVICE_CODE := LH8n
+SHRP_DEVICE_CODE := X6827
 
 # Recovery Type (It can be treble,normal,SAR) [Only for About Section] *
 SHRP_REC_TYPE := Treble
