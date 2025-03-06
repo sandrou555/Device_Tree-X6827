@@ -36,8 +36,6 @@
 /vendor               ext4    /dev/block/mapper/vendor_a                                wait,avb,logical,first_stage_mount,flags=display="vendor_a";backup=1;resize=1;flashimg=1;wipeingui
 /product		ext4	/dev/block/mapper/product_a                               wait,avb,logical,first_stage_mount,flags=display="product_a";backup=1;resize=1;flashimg=1;wipeingui
 /system_ext           ext4    /dev/block/mapper/system_ext_a                            wait,avb,logical,first_stage_mount,flags=display="system_ext_a";backup=1;resize=1;flashimg=1;wipeingui
-/odm_dlkm           ext4    /dev/block/mapper/odm_dlkm_a                            flags=display="odm_dlkm_a";backup=1;resize=1;flashimg=1
-/vendor_dlkm           ext4    /dev/block/mapper/vendor_dlkm_a                            flags=display="vendor_dlkm_a";backup=1;resize=1;flashimg=1
 
 # Firmware
 /dtbo_a			        emmc	/dev/block/by-name/dtbo_a			flags=display="dtbo_a";backup=1;flashimg=1
@@ -86,5 +84,3 @@
 /system_a           emmc      /dev/block/mapper/system_a                                    flags=display="system_a";backup=1;resize=1;flashimg=1
 /system_ext_a       emmc      /dev/block/mapper/system_ext_a                                flags=display="system_ext_a";backup=1;resize=1;flashimg=1
 /vendor_a           emmc      /dev/block/mapper/vendor_a                                    flags=display="vendor_a";backup=1;resize=1;flashimg=1
-/vendor_dlkm_a	emmc		/dev/block/mapper/vendor_dlkm_a								flags=display="vendor_dlkm_a";backup=1;resize=1;flashimg=1
-/odm_dlkm_a	        emmc		/dev/block/mapper/odm_dlkm_a								flags=display="odm_dlkm_a";backup=1;resize=1;flashimg=1

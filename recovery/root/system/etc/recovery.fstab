@@ -12,25 +12,16 @@ product				/product		erofs		ro																	wait,slotselect,logical
 product				/product		ext4		ro																	wait,slotselect,logical
 system_ext			/system_ext		erofs		ro																	wait,slotselect,logical
 system_ext			/system_ext		ext4		ro																	wait,slotselect,logical
-tr_mi				/tr_mi			ext4		ro																	wait,slotselect,logical
-tr_theme			/tr_theme		ext4		ro																	wait,slotselect,logical
-tr_region			/tr_region		ext4		ro																	wait,slotselect,logical
-tr_company			/tr_company		ext4		ro																	wait,slotselect,logical
-tr_carrier			/tr_carrier		ext4		ro																	wait,slotselect,logical
-tr_product			/tr_product		erofs		ro																	wait,slotselect,logical
-tr_preload			/tr_preload		erofs		ro																	wait,slotselect,logical
-system_dlkm			/system_dlkm		ext4		ro																	wait,slotselect,logical
-odm_dlkm			/odm_dlkm		ext4		ro																	wait,slotselect,logical
-vendor_dlkm			/vendor_dlkm		ext4		ro																	wait,slotselect,logical
 
 # Userdata partition
 /dev/block/by-name/metadata	/metadata		ext4		noatime,nosuid,nodev,discard														wait,check,formattable
-/dev/block/by-name/userdata /data f2fs noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,tran_gc,inlinecrypt wait,check,formattable,quota,latemount,resize,reservedsize=128m,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,fsverity,fscompress
+/dev/block/by-name/userdata	/data			f2fs		noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt				wait,check,formattable,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption
 
 # Need to have this entry in here even though the mount point itself is no longer needed.
 # The update_engine code looks for this entry in order to determine the boot device address
 # and fails if it does not find it.
 /dev/block/by-name/misc		/misc			emmc		defaults																defaults
+
 
 
 /dev/block/by-name/frp /persistent emmc defaults defaults
@@ -46,7 +37,6 @@ vendor_dlkm			/vendor_dlkm		ext4		ro																	wait,slotselect,logical
 
 
 /dev/block/by-name/boot /boot emmc defaults first_stage_mount,nofail,slotselect
-/dev/block/by-name/vendor_boot /vendor_boot emmc defaults first_stage_mount,nofail,slotselect
 
 
 
@@ -70,6 +60,13 @@ vendor_dlkm			/vendor_dlkm		ext4		ro																	wait,slotselect,logical
 
 /dev/block/by-name/sspm_1 /sspm_1 emmc defaults defaults
 /dev/block/by-name/sspm_2 /sspm_2 emmc defaults defaults
+
+
+/dev/block/by-name/dpm_1 /dpm_1 emmc defaults defaults
+/dev/block/by-name/dpm_2 /dpm_2 emmc defaults defaults
+
+/dev/block/by-name/mcupm_1 /mcupm_1 emmc defaults defaults
+/dev/block/by-name/mcupm_2 /mcupm_2 emmc defaults defaults
 
 
 
